@@ -53,8 +53,16 @@
 
 </link>
 
+<gazebo reference = "chassis">
+<visual><material>
+    <ambient>1 1 1 1</ambient>
+    <diffuse>1 1 1 1</diffuse>
+    <specular>1 1 1 1</specular>
+</material></visual>
+</gazebo>
 
-<joint name="wheel_link" type="continuous">
+
+<joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
     <origin xyz="0 0.22 0.05"/>
@@ -81,6 +89,20 @@
 </xacro:inertial_cylinder>
 </link>
 
+<gazebo reference="left_wheel">
+<visual><material>
+    <ambient>0 0 0 1</ambient>
+    <diffuse>0 0 0 1</diffuse>
+    <specular>0 0 0 1</specular>
+</material></visual>
+</gazebo>
+
+<joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.22 0.05"/>
+    <axis xyz="0 1 0" />
+</joint>
 
 <link name="right_wheel">
 <visual>
@@ -101,12 +123,14 @@
 </xacro:inertial_cylinder>
 </link>
 
-<joint name="right_wheel_joint" type="continuous">
-    <parent link="base_link"/>
-    <child link="right_wheel"/>
-    <origin xyz="0 -0.22 0.05"/>
-    <axis xyz="0 1 0" />
-</joint>
+<gazebo reference="right_wheel">
+<visual><material>
+    <ambient>0 0 0 1</ambient>
+    <diffuse>0 0 0 1</diffuse>
+    <specular>0 0 0 1</specular>
+</material></visual>
+</gazebo>
+
 
 <joint name ="caster_wheel_joint" type="fixed">
     <parent link="chassis"/>
@@ -132,4 +156,12 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
 </xacro:inertial_sphere> 
 </link>
+
+<gazebo reference="caster_wheel">
+<visual><material>
+    <ambient>0.2 0.2 1 1</ambient>
+    <diffuse>0.2 0.2 1 1</diffuse>
+    <specular>0.2 0.2 1 1</specular>
+</material></visual>
+</gazebo>
 </robot>
