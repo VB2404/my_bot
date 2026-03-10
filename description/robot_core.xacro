@@ -163,5 +163,7 @@
     <diffuse>0.2 0.2 1 1</diffuse>
     <specular>0.2 0.2 1 1</specular>
 </material></visual>
+<mu1 value="0.001"/>
+<mu2 value="0.001"/>
 </gazebo>
 </robot>
