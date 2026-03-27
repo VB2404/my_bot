@@ -53,6 +53,13 @@ def generate_launch_description():
         output='screen'
     )
 
+    node_controller_manager = Node(
+    package="controller_manager",
+    executable="ros2_control_node",
+    parameters=[params],
+    output="screen"
+)
+
     return LaunchDescription([
 
         DeclareLaunchArgument(
@@ -62,6 +69,7 @@ def generate_launch_description():
         ),
 
         node_robot_state_publisher,
+        node_controller_manager,
         node_joint_state_publisher_gui,
         node_rviz
 

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="my_bot_ros2_control">
+
+    <ros2_control name="MyBotSystem" type="system">
+
+      <hardware>
+        <plugin>my_bot/DVLHardware</plugin>
+        <param name="dvl_topic">/dvl/data</param>
+        <param name="frame_id">dvl_frame</param>
+      </hardware>
+
+      <sensor name="dvl_frame">
+        <state_interface name="vx"/>
+        <state_interface name="vy"/>
+        <state_interface name="vz"/>
+      </sensor>
+
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>

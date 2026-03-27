@@ -1,0 +1,8 @@
+<library path="my_bot_hardware">
+
+  <class
+    name="my_bot/DVLHardware"
+    type="my_bot::DVLHardware"
+    base_class_type="hardware_interface::SystemInterface"/>
+
+</library>
